@@ -16,11 +16,13 @@ function RecipeCarousel({ recipes }) {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {recipes.map((item, index) => (
         <Carousel.Item key={index}>
-          <RecipeCard
-            title={item.title}
-            ingredients={item.ingredients}
-            servings={item.servings}
-          />
+          <div className="flex justify-center">
+            <RecipeCard
+              title={item.title}
+              ingredients={item.ingredients}
+              servings={item.servings}
+            />
+          </div>
         </Carousel.Item>
       ))}
     </Carousel>

@@ -23,7 +23,7 @@ export default function MainContainer() {
 
   return (
     <section
-      className="main-container"
+      className="main-container bg-slate-400"
       style={{
         border: "2px solid black", // Border color and thickness
         padding: "20px", // Padding inside the container
