@@ -6,6 +6,9 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 function IngredientPicker({ setSelectedIngredient }) {
+  // initializing state to allow search text box
+  const [inputValue, setInputValue] = useState("");
+
   function handleClick(e) {
     const selectedIngredient = e.target.value;
     console.log(`user has selected to search for ${selectedIngredient}`); //sometimes this logs before it has changed!
@@ -21,23 +24,23 @@ function IngredientPicker({ setSelectedIngredient }) {
           <Button
             value="chicken"
             onClick={handleClick}
-            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded"
+            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 h-24 border rounded-full text-5xl"
           >
-            Chicken
+            🍗
           </Button>
           <Button
             value="pork"
             onClick={handleClick}
-            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded"
+            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded text-5xl"
           >
-            Pork
+            🥩
           </Button>
           <Button
             value="beef"
             onClick={handleClick}
-            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded"
+            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded text-5xl"
           >
-            Beef
+            🍖
           </Button>
         </ButtonGroup>
         <ButtonGroup
@@ -47,30 +50,36 @@ function IngredientPicker({ setSelectedIngredient }) {
           <Button
             value="pasta"
             onClick={handleClick}
-            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded"
+            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded text-5xl"
           >
-            Pasta
+            🍝
           </Button>
           <Button
             value="rice"
             onClick={handleClick}
-            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded"
+            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded text-5xl"
           >
-            Rice
+            🍚
           </Button>
           <Button
             value="potato"
             onClick={handleClick}
-            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded"
+            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded text-5xl"
           >
-            Potato
+            🥔
           </Button>
         </ButtonGroup>
       </ButtonToolbar>
       <div>
         <ButtonGroup aria-label="Third group" className="flex flex-row">
-          <input type="text" defaultValue="or type your own"></input>
-          <Button onClick={handleClick}>Submit text</Button>
+          <input
+            type="text"
+            placeholder="...or type your own"
+            onChange={(e) => setInputValue(e.target.value)} //stores the input
+          ></input>
+          <Button value={inputValue} onClick={handleClick}>
+            Submit text
+          </Button>
         </ButtonGroup>
       </div>
     </div>

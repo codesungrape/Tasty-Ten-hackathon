@@ -14,6 +14,7 @@ export default function MainContainer() {
       const response = await fetch(`/api/handledata?query=${ingredient}`);
       // Parse it to json
       const data = await response.json();
+      console.log(data);
       // Store the fetched data in state
       setFoodData(data);
     } catch (error) {
@@ -22,7 +23,7 @@ export default function MainContainer() {
   };
 
   return (
-    <section className="main-container bg-slate-100 p-6 rounded-lg shadow-lg">
+    <section className="main-container bg-yellow-950 p-6 rounded-lg shadow-lg">
       <IngredientPicker setSelectedIngredient={fetchData} />
       <ControlledCarousel recipes={foodData} />
     </section>
