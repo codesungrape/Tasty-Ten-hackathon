@@ -1,3 +1,7 @@
+"use client";
+import IngredientPicker from "../IngredientPicker/IngredientPicker";
+import ControlledCarousel from "../RecipeCarousel/RecipeCarousel";
+
 export default function MainContainer() {
   return (
     <section
@@ -9,7 +13,8 @@ export default function MainContainer() {
         borderRadius: "8px", // Optional: Rounded corners
       }}
     >
-      {/* Content goes here */}
+      <IngredientPicker />
+      <ControlledCarousel />
     </section>
   );
 }
