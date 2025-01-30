@@ -15,13 +15,13 @@ function RecipeCarousel({ recipes }) {
   console.log(recipes);
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel activeIndex={index} onSelect={handleSelect} className="mt-6">
       {recipes.map((item, index) => (
         <Carousel.Item key={index}>
           <div className="flex justify-center">
             <RecipeCard
               title={item.title}
-              ingredients={item.ingredients}
+              instructions={item.instructions}
               servings={item.servings}
             />
           </div>
