@@ -7,9 +7,12 @@ import Footer from "./Components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <MainContainer />
+      <main className="flex-grow flex items-center justify-center">
+        <MainContainer />
+      </main>
+
       <Footer />
     </div>
   );

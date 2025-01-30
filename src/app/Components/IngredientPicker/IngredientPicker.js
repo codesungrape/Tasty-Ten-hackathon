@@ -15,34 +15,41 @@ function IngredientPicker() {
   }
 
   return (
-    <ButtonToolbar aria-label="Toolbar with button groups">
-      <ButtonGroup className="me-2" aria-label="First group">
-        <Button value="chicken" onClick={handleClick}>
-          chicken
-        </Button>
-        <Button value="pork" onClick={handleClick}>
-          pork
-        </Button>
-        <Button value="beef" onClick={handleClick}>
-          beef
-        </Button>
-      </ButtonGroup>
-      <ButtonGroup className="me-2" aria-label="Second group">
-        <Button value="pasta" onClick={handleClick}>
-          pasta
-        </Button>
-        <Button value="rice" onClick={handleClick}>
-          rice
-        </Button>
-        <Button value="potato" onClick={handleClick}>
-          potato
-        </Button>
-      </ButtonGroup>
-      <ButtonGroup aria-label="Third group">
-        <input type="text" defaultValue="or type your own"></input>
-        <Button onClick={handleClick}>Submit text</Button>
-      </ButtonGroup>
-    </ButtonToolbar>
+    <div className="flex items-center justify-center">
+      <ButtonToolbar
+        aria-label="Toolbar with button groups"
+        className="flex flex-col space-y-4"
+      >
+        <ButtonGroup className="me-2" aria-label="First group">
+          <Button value="chicken" onClick={handleClick}>
+            chicken
+          </Button>
+          <Button value="pork" onClick={handleClick}>
+            pork
+          </Button>
+          <Button value="beef" onClick={handleClick}>
+            beef
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup className="me-2" aria-label="Second group">
+          <Button value="pasta" onClick={handleClick}>
+            pasta
+          </Button>
+          <Button value="rice" onClick={handleClick}>
+            rice
+          </Button>
+          <Button value="potato" onClick={handleClick}>
+            potato
+          </Button>
+        </ButtonGroup>
+      </ButtonToolbar>
+      <div>
+        <ButtonGroup aria-label="Third group" className="flex flex-row">
+          <input type="text" defaultValue="or type your own"></input>
+          <Button onClick={handleClick}>Submit text</Button>
+        </ButtonGroup>
+      </div>
+    </div>
   );
 }
 
