@@ -2,13 +2,12 @@
 
 import Card from "react-bootstrap/Card";
 
-function RecipeCard() {
+function RecipeCard({ title, ingredients, servings }) {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Body>
-        <Card.Title>Recipe title</Card.Title>
-        <Card.Text>Recipe description.</Card.Text>
-        <Card.Link href="#">Pop up to give ingredients?</Card.Link>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{servings}</Card.Text>
       </Card.Body>
     </Card>
   );

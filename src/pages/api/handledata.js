@@ -1,10 +1,10 @@
 // Need to rethink how we're making this request, as we need to recieve stuff fron the frontend
-const apiRequest = "https://api.api-ninjas.com/v1/recipe?query=chicken";
+const apiRequest = "https://api.api-ninjas.com/v1/recipe?query=beef";
 
 // Not good to do it like this, needs to be in .env file
 const key = "ggk2eJlpw80bGUMPF16PBg==pVDmA2VuvXcXXLdC";
 
-export async function getData(req, res) {
+export default async function handler(req, res) {
   try {
     const response = await fetch(apiRequest, {
       headers: {
@@ -21,6 +21,3 @@ export async function getData(req, res) {
     res.status(500).json({ error: "Failed to fetch data" });
   }
 }
-
-const testing = await getData();
-console.log(testing);
