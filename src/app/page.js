@@ -3,6 +3,7 @@
 // ENTRY POINT
 import Header from "./Components/Header/Header";
 import MainContainer from "./Components/MainContainer/MainContainer";
+import Footer from "./Components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <h1>Testing</h1>
       <MainContainer />
+      <Footer />
     </div>
   );
 }
