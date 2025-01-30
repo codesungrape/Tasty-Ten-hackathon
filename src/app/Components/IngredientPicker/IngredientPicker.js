@@ -5,15 +5,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
-function IngredientPicker() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  function handleClick(e) {
-    setSearchTerm(e.target.value);
-    console.log(`user has selected to search for ${searchTerm}`); //sometimes this logs before it has changed!
-    //use a function here handed down from props to return this search term to App level
-  }
-
+function IngredientPicker({ setSelectedIngredient }) {
   return (
     <div className="flex items-center justify-center">
       <ButtonToolbar
@@ -21,34 +13,20 @@ function IngredientPicker() {
         className="flex flex-col space-y-4"
       >
         <ButtonGroup className="me-2" aria-label="First group">
-          <Button value="chicken" onClick={handleClick}>
+          <Button onClick={() => setSelectedIngredient("chicken")}>
             chicken
           </Button>
-          <Button value="pork" onClick={handleClick}>
-            pork
-          </Button>
-          <Button value="beef" onClick={handleClick}>
-            beef
-          </Button>
+          <Button onClick={() => setSelectedIngredient("pork")}>pork</Button>
+          <Button onClick={() => setSelectedIngredient("beef")}>beef</Button>
         </ButtonGroup>
         <ButtonGroup className="me-2" aria-label="Second group">
-          <Button value="pasta" onClick={handleClick}>
-            pasta
-          </Button>
-          <Button value="rice" onClick={handleClick}>
-            rice
-          </Button>
-          <Button value="potato" onClick={handleClick}>
+          <Button onClick={() => setSelectedIngredient("pasta")}>pasta</Button>
+          <Button onClick={() => setSelectedIngredient("rice")}>rice</Button>
+          <Button onClick={() => setSelectedIngredient("potato")}>
             potato
           </Button>
         </ButtonGroup>
       </ButtonToolbar>
-      <div>
-        <ButtonGroup aria-label="Third group" className="flex flex-row">
-          <input type="text" defaultValue="or type your own"></input>
-          <Button onClick={handleClick}>Submit text</Button>
-        </ButtonGroup>
-      </div>
     </div>
   );
 }

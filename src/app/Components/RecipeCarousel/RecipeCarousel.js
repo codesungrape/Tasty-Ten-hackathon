@@ -12,6 +12,8 @@ function RecipeCarousel({ recipes }) {
     setIndex(selectedIndex);
   };
 
+  console.log(recipes);
+
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {recipes.map((item, index) => (

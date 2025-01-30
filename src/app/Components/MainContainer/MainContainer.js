@@ -7,19 +7,21 @@ export default function MainContainer() {
   // Initializing state here
   const [foodData, setFoodData] = useState([]);
 
-  // Initialize useEffect
-  useEffect(() => {
-    // Fetch the data from the backend
-    const fetchData = async () => {
-      const response = await fetch("/api/handledata");
+  // Fetch the data from the backend
+  // Takes ingredient as an argument
+  const fetchData = async (ingredient) => {
+    try {
+      const response = await fetch(`/api/handledata?query=${ingredient}`);
+      console.log(response);
       // Parse it to json
       const data = await response.json();
+      console.log(data);
       // Store the fetched data in state
       setFoodData(data);
-    };
-
-    fetchData(); // call fetch data here
-  }, []); // just once as shown by empty dependency array
+    } catch (error) {
+      console.error(`Error fetching data:`, error);
+    }
+  };
 
   return (
     <section
@@ -31,7 +33,7 @@ export default function MainContainer() {
         borderRadius: "8px", // Optional: Rounded corners
       }}
     >
-      <IngredientPicker />
+      <IngredientPicker setSelectedIngredient={fetchData} />
       <ControlledCarousel recipes={foodData} />
     </section>
   ); // Passing state down the component tree as props
