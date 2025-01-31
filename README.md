@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tasty Ten
 
-## Getting Started
+## Project Description
 
-First, run the development server:
+Tasty Ten is a React app that fetches data from an external API to display a list of 10 random favorite recipes. It combines front-end React functionality with backend API calls, making it a full-stack application in a simple project. With just one click, users can instantly get a curated list of recipes, making it perfect for busy consumers looking for quick meal ideas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## API Reference
+
+#### Get all items
+
+```http
+  GET /api/handleData
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The API will feature the following endpoints:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| HTTP Method | Path            | Request Body (JSON) | Response Body (JSON)                 | Status Code | Result                       |
+| ----------- | --------------- | ------------------- | ------------------------------------ | ----------- | ---------------------------- |
+| GET         | /api/handleData |                     | An array of up to ten recipe objects | 200         | Gets up to 10 recipe objects |
 
-## Learn More
+## Acknowledgements
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/)
+- [Tailwind.css](https://tailwindcss.com/docs/installation/framework-guides/nextjs)
+- [React-Bootstrap](https://react-bootstrap.netlify.app/)
+- [Recipe API](https://www.api-ninjas.com/api/recipe)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Appendix
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Any additional information goes here
 
-## Deploy on Vercel
+## Authors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [@lizwade](https://github.com/lizwade)
+- [@sergio](https://github.com/skudz96)
+- [@shanti](https://github.com/codesungrape)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+## Demo
+
+TBA
+
+## 🚀 Deployment
+
+### Locally (Development Mode)
+
+To start the development server, run:
+
+````sh
+npm run dev
+
+
+## 🛠 Installation
+
+To install and run this project locally, follow these steps:
+
+### 1. Clone the repository
+```sh
+git clone https://github.com/your-username/your-repo.git
+
+
+
+cd my-project
+npm install
+npm run dev## 🛣️ Roadmap
+
+### 📌 MVP 2
+
+### 🎯 Upcoming Features
+- **Favorite Recipes:**
+  - Allow users to click on a recipe and add it to their favorites.
+  - Create an API route to store favorite recipes in a database (MongoDB or SQL).
+  - Develop a backend to handle these interactions securely.
+
+- **Favorites Page:**
+  - Build a separate page where users can view their saved recipes.
+  - Fetch and render relevant data dynamically from the database.
+
+- **Full CRUD Functionality:**
+  - **Update:** Allow users to edit their saved recipes.
+  - **Delete:** Enable users to remove recipes from their favorites.
+  - Ensure backend API routes support these operations securely.
+
+- **Backend Enhancements:**
+  - Optimize database queries for performance.
+  - Implement proper error handling and validation.
+  - Secure API endpoints to prevent unauthorized access.
+
+### 🔜 Future Enhancements
+- Implement authentication (e.g., login/logout) for personalized user data.
+- Add search and filter functionality for saved recipes.
+- Improve UI/UX with animations and better responsiveness.
+````
