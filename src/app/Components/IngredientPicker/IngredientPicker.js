@@ -20,55 +20,55 @@ function IngredientPicker({ setSelectedIngredient }) {
         aria-label="Toolbar with button groups"
         className="flex flex-col space-y-4"
       >
-        <ButtonGroup className="me-2" aria-label="First group">
+        <div className="me-2 flex" aria-label="First group">
           <Button
             value="chicken"
             onClick={handleClick}
-            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 h-24 border rounded-full text-5xl"
+            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 h-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🍗
           </Button>
           <Button
             value="pork"
             onClick={handleClick}
-            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded text-5xl"
+            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🥩
           </Button>
           <Button
             value="beef"
             onClick={handleClick}
-            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded text-5xl"
+            className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🍖
           </Button>
-        </ButtonGroup>
-        <ButtonGroup
-          className="me-2"
+        </div>
+        <div
+          className="flex items-center justify-center mb-6"
           aria-label="Second group w-24 border rounded"
         >
           <Button
             value="pasta"
             onClick={handleClick}
-            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded text-5xl"
+            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🍝
           </Button>
           <Button
             value="rice"
             onClick={handleClick}
-            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded text-5xl"
+            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🍚
           </Button>
           <Button
             value="potato"
             onClick={handleClick}
-            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded text-5xl"
+            className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🥔
           </Button>
-        </ButtonGroup>
+        </div>
       </ButtonToolbar>
       <div>
         <ButtonGroup aria-label="Third group" className="flex flex-row">
