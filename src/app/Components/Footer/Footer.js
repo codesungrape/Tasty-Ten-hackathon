@@ -2,9 +2,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white text-center p-4">
       <p className="m-0">
-        © {new Date().getFullYear()} Reci-yo. All rights reserved.
+        © {new Date().getFullYear()} TastyTen. All rights reserved.
       </p>
-      <div className="mt-2">
+      {/* <div className="mt-2">
         <a href="/about" className="text-green-500 mx-2">
           About
         </a>
@@ -14,7 +14,7 @@ export default function Footer() {
         <a href="/terms" className="text-green-500 mx-2">
           Terms of Service
         </a>
-      </div>
+      </div> */}
     </footer>
   );
 }
