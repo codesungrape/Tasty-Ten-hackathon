@@ -10,7 +10,7 @@ function Header() {
     <Navbar
       expand="lg"
       className="bg-slate-700 text-white shadow-md" // Darker slate color with shadow
-      style={{ height: "7rem" }} // Set fixed height
+      // style={{ height: "7rem" }} // Set fixed height
     >
       <Container>
         {/* Tasty Ten Branding */}
