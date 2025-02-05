@@ -15,6 +15,7 @@ function IngredientPicker({ setSelectedIngredient }) {
   }
 
   return (
+    //https://www.magnet.co.uk/news/most-searched-leftover-ingredients/
     <div className="flex items-center justify-center mb-6">
       <ButtonToolbar
         aria-label="Toolbar with button groups"
@@ -31,6 +32,7 @@ function IngredientPicker({ setSelectedIngredient }) {
           </Button>
           <Button
             value="pork"
+            aria-label="pork"
             onClick={handleClick}
             className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
@@ -38,6 +40,7 @@ function IngredientPicker({ setSelectedIngredient }) {
           </Button>
           <Button
             value="beef"
+            aria-label="beef"
             onClick={handleClick}
             className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
@@ -50,17 +53,19 @@ function IngredientPicker({ setSelectedIngredient }) {
         >
           <Button
             value="corn"
+            aria-label="corn"
             onClick={handleClick}
             className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
             🌽
           </Button>
           <Button
-            value="rice"
+            value="fish"
+            aria-label="fish"
             onClick={handleClick}
             className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
-            🍚
+            🐟
           </Button>
           <Button
             value="potato"
@@ -75,7 +80,7 @@ function IngredientPicker({ setSelectedIngredient }) {
         <ButtonGroup aria-label="Third group" className="flex flex-row">
           <input
             type="text"
-            placeholder=" ...or type your own"
+            placeholder="...or type your own"
             value={inputValue} // binds input value
             onChange={(e) => setInputValue(e.target.value)} // updates the state
           />

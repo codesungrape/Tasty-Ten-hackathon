@@ -16,18 +16,43 @@ describe("IngredientPicker", () => {
     mockSetSelectedIngredient.mockClear();
   });
 
-  describe("Preset ingredient buttons", () => {
-    test("should call setSelectedIngredient with correct value when meat buttons are clicked", () => {
-      // Arrange
-      // test chicken button
+  describe("Custom ingredient button", () => {
+    test("should call setSelectedIngredient with correct value when preset buttons are clicked", () => {
       const chickenButton = screen.getByText("🐔");
-
-      //Act
-      // simulate the userclick
       fireEvent.click(chickenButton);
-
-      //Assert
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(1);
       expect(mockSetSelectedIngredient).toHaveBeenCalledWith("chicken");
+
+      const porkButton = screen.getByText("🐷");
+      fireEvent.click(porkButton);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(2);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledWith("pork");
+
+      const beefButton = screen.getByText("🐮");
+      fireEvent.click(beefButton);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(3);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledWith("beef");
+
+      const cornButton = screen.getByText("🌽");
+      fireEvent.click(cornButton);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(4);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledWith("corn");
+
+      const fishButton = screen.getByText("🐟");
+      fireEvent.click(fishButton);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(5);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledWith("fish");
+
+      const potatoButton = screen.getByText("🥔");
+      fireEvent.click(potatoButton);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(6);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledWith("potato");
+    });
+    test("should call setSelectedIngredient with correct value when user enters a search value in the text input box", async () => {
+      // arrange
+      const input = screen.getByPlaceholderText("...or type your own");
+      await userEvent.type(input, "carrot");
+      expect(input.value).toBe("carrot");
     });
   });
 });
