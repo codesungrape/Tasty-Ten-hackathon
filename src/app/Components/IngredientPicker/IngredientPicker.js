@@ -23,6 +23,7 @@ function IngredientPicker({ setSelectedIngredient }) {
         <div className="me-2 flex" aria-label="First group">
           <Button
             value="chicken"
+            aria-label="chicken"
             onClick={handleClick}
             className="bg-red-500 hover:bg-red-600 m-2 p-2 w-24 h-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
@@ -48,11 +49,11 @@ function IngredientPicker({ setSelectedIngredient }) {
           aria-label="Second group w-24 border rounded"
         >
           <Button
-            value="pasta"
+            value="corn"
             onClick={handleClick}
             className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
-            🍝
+            🌽
           </Button>
           <Button
             value="rice"
