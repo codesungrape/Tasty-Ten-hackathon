@@ -69,6 +69,7 @@ function IngredientPicker({ setSelectedIngredient }) {
           </Button>
           <Button
             value="potato"
+            aria-label="potato"
             onClick={handleClick}
             className="bg-amber-500 hover:bg-amber-600 m-2 p-2 w-24 border rounded-full text-5xl flex items-center justify-center aspect-square"
           >
@@ -84,7 +85,11 @@ function IngredientPicker({ setSelectedIngredient }) {
             value={inputValue} // binds input value
             onChange={(e) => setInputValue(e.target.value)} // updates the state
           />
-          <Button value={inputValue} onClick={handleClick}>
+          <Button
+            aria-label="Submit-btn"
+            value={inputValue}
+            onClick={handleClick}
+          >
             Submit text
           </Button>
         </ButtonGroup>

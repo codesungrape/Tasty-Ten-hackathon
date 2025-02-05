@@ -50,13 +50,24 @@ describe("IngredientPicker", () => {
     });
   });
   describe("Custom ingredient button", () => {
-    test("should call setSelectedIngredient with correct value when user enters CUSTOM search value", async () => {
+    test("should call setSelectedIngredient with correct value when user enters custom search value", async () => {
       // arrange
       const input = screen.getByPlaceholderText("...or type your own");
       await userEvent.type(input, "carrot");
-      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(6);
       expect(input.value).toBe("carrot");
     });
-    test("should call setSelectedIngredient with input value when submit button is clciked", () => {});
+    test("should call setSelectedIngredient with input value when submit button is clicked", () => {
+      //arrange
+      const input = screen.getByPlaceholderText("...or type your own");
+      const submitButton = screen.getByText("Submit text");
+
+      //act
+      fireEvent.change(input, { target: { value: "carrot" } });
+      fireEvent.click(submitButton);
+
+      //Assert- check if setSelectedIngredient was called with the input value
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(1);
+      expect(mockSetSelectedIngredient).toHaveBeenCalledWith("carrot");
+    });
   });
 });
