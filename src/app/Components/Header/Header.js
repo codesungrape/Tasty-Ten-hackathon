@@ -13,7 +13,7 @@ function Header() {
           {/* Tasty Ten Branding */}
           <Navbar.Brand
             href="#home"
-            className="text-2xl font-bold text-white uppercase tracking-widest border-b-2 hover:border-yellow-400 transition-all duration-300"
+            className="text-2xl font-bold text-white uppercase tracking-widest border-b-2 border-transparent hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300"
           >
             Tasty Ten
           </Navbar.Brand>

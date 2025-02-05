@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import RecipeCard from "../RecipeCards/RecipeCard";
+import RecipeCard from "../RecipeCard/RecipeCard";
 
 function RecipeCarousel({ recipes }) {
   const [index, setIndex] = useState(0);
