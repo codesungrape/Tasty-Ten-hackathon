@@ -6,9 +6,10 @@ function Header() {
     <div>
       <Navbar
         expand="lg"
-        className="h-28 p-4 bg-slate-700 text-white shadow-md"
+        className="bg-slate-700 text-white shadow-md"
+        style={{ minHeight: "80px" }}
       >
-        <Container>
+        <Container className="py-3">
           {/* Tasty Ten Branding */}
           <Navbar.Brand
             href="#home"
