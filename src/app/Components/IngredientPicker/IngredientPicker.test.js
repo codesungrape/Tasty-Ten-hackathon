@@ -16,8 +16,8 @@ describe("IngredientPicker", () => {
     mockSetSelectedIngredient.mockClear();
   });
 
-  describe("Custom ingredient button", () => {
-    test("should call setSelectedIngredient with correct value when preset buttons are clicked", () => {
+  describe("Preset and custom ingredient button", () => {
+    test("should call setSelectedIngredient with correct value when PRESET buttons are clicked", () => {
       const chickenButton = screen.getByText("🐔");
       fireEvent.click(chickenButton);
       expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(1);
@@ -48,10 +48,11 @@ describe("IngredientPicker", () => {
       expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(6);
       expect(mockSetSelectedIngredient).toHaveBeenCalledWith("potato");
     });
-    test("should call setSelectedIngredient with correct value when user enters a search value in the text input box", async () => {
+    test("should call setSelectedIngredient with correct value when user enters CUSTOM search value", async () => {
       // arrange
       const input = screen.getByPlaceholderText("...or type your own");
       await userEvent.type(input, "carrot");
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(6);
       expect(input.value).toBe("carrot");
     });
   });
