@@ -69,5 +69,66 @@ describe("IngredientPicker", () => {
       expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(1);
       expect(mockSetSelectedIngredient).toHaveBeenCalledWith("carrot");
     });
+    test("should clear input after submitting", () => {
+      //arrange
+      const input = screen.getByPlaceholderText("...or type your own");
+      const submitButton = screen.getByText("Submit text");
+
+      //act
+      fireEvent.change(input, { target: { value: "carrot" } });
+      fireEvent.click(submitButton);
+
+      //Assert
+      expect(mockSetSelectedIngredient).toHaveBeenCalledTimes(1);
+      expect(input.value).toBe("");
+    });
+  });
+  describe("Accessibility", () => {
+    test("should have proper ARIA labels for toolbar and groups", () => {
+      const toolbar = screen.getByLabelText("Toolbar with button groups");
+      expect(toolbar).toBeInTheDocument();
+
+      const firstGroup = screen.getByLabelText("First group");
+      expect(firstGroup).toBeInTheDocument();
+
+      const thirdGroup = screen.getByLabelText("Third group");
+      expect(thirdGroup).toBeInTheDocument();
+    });
+
+    test("should have correct aria-labels for the ingredient buttons", () => {
+      const chickenButton = screen.getByLabelText("chicken");
+      expect(chickenButton).toBeInTheDocument();
+
+      const porkButton = screen.getByLabelText("pork");
+      expect(porkButton).toBeInTheDocument();
+
+      const beefButton = screen.getByLabelText("beef");
+      expect(beefButton).toBeInTheDocument();
+
+      const cornButton = screen.getByLabelText("corn");
+      expect(cornButton).toBeInTheDocument();
+
+      const fishButton = screen.getByLabelText("fish");
+      expect(fishButton).toBeInTheDocument();
+
+      const potatoButton = screen.getByLabelText("potato");
+      expect(potatoButton).toBeInTheDocument();
+    });
+    test("should have correct aria-labels for the input field", () => {
+      const input = screen.getByLabelText("input-field");
+      expect(input).toBeInTheDocument();
+    });
+    test("should have correct aria-labels for the submit button", () => {
+      const submitButton = screen.getByLabelText("Submit-btn");
+      expect(submitButton).toBeInTheDocument();
+    });
+  });
+  describe("Component Structure", () => {
+    test("should render all preset ingredient buttons", () => {
+      const buttons = ["🐔", "🐷", "🐮", "🌽", "🐟", "🥔"];
+      buttons.forEach((emoji) => {
+        expect(screen.getByText(emoji)).toBeInTheDocument();
+      });
+    });
   });
 });

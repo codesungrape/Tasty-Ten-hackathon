@@ -81,6 +81,7 @@ function IngredientPicker({ setSelectedIngredient }) {
         <ButtonGroup aria-label="Third group" className="flex flex-row">
           <input
             type="text"
+            aria-label="input-field"
             placeholder="...or type your own"
             value={inputValue} // binds input value
             onChange={(e) => setInputValue(e.target.value)} // updates the state
