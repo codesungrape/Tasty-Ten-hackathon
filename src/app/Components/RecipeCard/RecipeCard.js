@@ -1,6 +1,7 @@
 "use client";
 
 import Card from "react-bootstrap/Card";
+import PropTypes from "prop-types";
 
 function RecipeCard({ title, instructions, servings }) {
   if (!title || !instructions || !servings) {
