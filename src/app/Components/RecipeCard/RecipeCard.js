@@ -3,6 +3,10 @@
 import Card from "react-bootstrap/Card";
 
 function RecipeCard({ title, instructions, servings }) {
+  if (!title || !instructions || !servings) {
+    throw new Error("All props (title, instructions, servings) are required.");
+  }
+
   return (
     <Card className="w-80 bg-[#fef9f3] shadow-lg rounded-xl border border-[#e0c3a4] overflow-hidden transform transition duration-300 hover:scale-105">
       <Card.Body className="p-6">
@@ -19,5 +23,13 @@ function RecipeCard({ title, instructions, servings }) {
     </Card>
   );
 }
+
+// Using React's propType feature to specify the EXPECTED types of props this component should receive
+RecipeCard.proptypes = {
+  title: PropTypes.string.isRequired,
+  instructions: PropTypes.string.isRequired,
+  servings: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
+};
 
 export default RecipeCard;
