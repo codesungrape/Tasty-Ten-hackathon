@@ -11,37 +11,13 @@ With just one click, users can generate and explore recipe suggestions—perfect
 
 ### Flowchart
 
-[User selects ingredient]
-│
-▼
-[IngredientPicker calls fetchData()]
-│
-▼
-[fetchData() sends request to Next.js API]
-│
-▼
-[Next.js API route (/api/handleData.js)]
-│
-▼
-[handleData.js fetches from External API]
-│
-▼
-[External API returns recipe data]
-│
-▼
-[handleData.js sends response back to frontend]
-│
-▼
-[fetchData() receives data]
-│
-▼
-[foodData state updates in MainContainer]
-│
-▼
-[Updated foodData passed to ControlledCarousel]
-│
-▼
-[ControlledCarousel displays recipes]
+#### Macro
+
+Frontend (MainContainer.js) ➝ /api/handledata.js (Server/API Route) ➝ External API ➝ Response Sent Back to Frontend
+
+#### Micro
+
+[User selects ingredient] --> [IngredientPicker calls fetchData()] --> [fetchData() sends request to Next.js API] --> [Next.js API route (/api/handleData.js)] --> [handleData.js fetches from External API] --> [External API returns recipe data] --> [handleData.js sends response back to frontend] --> [fetchData() receives data] --> [foodData state updates in MainContainer] --> [Updated foodData passed to ControlledCarousel] --> [ControlledCarousel displays recipes]
 
 ## 🌐 API Reference
 

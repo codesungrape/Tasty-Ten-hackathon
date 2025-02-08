@@ -6,8 +6,8 @@ import { useState } from "react";
 export default function MainContainer() {
   const [foodData, setFoodData] = useState([]);
 
-  // Fetch the data from the backend
-  // Takes ingredient as an argument
+  // Fetch the data from the our backend/handledata.js file
+  // Ingredient variable stores the value of onClick event object
   const fetchData = async (ingredient) => {
     try {
       const response = await fetch(`/api/handledata?query=${ingredient}`);
@@ -25,5 +25,5 @@ export default function MainContainer() {
       <IngredientPicker setSelectedIngredient={fetchData} />
       <ControlledCarousel recipes={foodData} />
     </section>
-  ); // Passing state down the component tree as props
+  );
 }

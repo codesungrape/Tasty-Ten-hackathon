@@ -1,3 +1,5 @@
+// //https://www.magnet.co.uk/news/most-searched-leftover-ingredients/
+
 "use client";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ButtonToolbar } from "react-bootstrap";
@@ -15,7 +17,6 @@ function IngredientPicker({ setSelectedIngredient }) {
   }
 
   return (
-    //https://www.magnet.co.uk/news/most-searched-leftover-ingredients/
     <div className="flex items-center justify-center mb-6">
       <ButtonToolbar
         aria-label="Toolbar with button groups"
