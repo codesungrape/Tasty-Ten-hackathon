@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import PropTypes from "prop-types";
 
 function RecipeCard({ title, instructions, servings }) {
+  // whats teh reason for this?
   if (!title || !instructions || !servings) {
     throw new Error("All props (title, instructions, servings) are required.");
   }

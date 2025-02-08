@@ -1,9 +1,7 @@
-// Need to rethink how we're making this request, as we need to recieve stuff fron the frontend
 // Remove the query parameter from here, and add it as a variable in MainContainer
 var apiRequest = "https://api.api-ninjas.com/v1/recipe";
 
-// Not good to do it like this, needs to be in .env file
-const key = "ggk2eJlpw80bGUMPF16PBg==pVDmA2VuvXcXXLdC";
+const key = process.env.NEXT_PUBLIC_API_KEY;
 
 export default async function handler(req, res) {
   const { query } = req.query;

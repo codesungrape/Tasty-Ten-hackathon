@@ -4,7 +4,6 @@ import ControlledCarousel from "../RecipeCarousel/RecipeCarousel";
 import { useState } from "react";
 
 export default function MainContainer() {
-  // Initializing state here
   const [foodData, setFoodData] = useState([]);
 
   // Fetch the data from the backend
@@ -12,7 +11,6 @@ export default function MainContainer() {
   const fetchData = async (ingredient) => {
     try {
       const response = await fetch(`/api/handledata?query=${ingredient}`);
-      // Parse it to json
       const data = await response.json();
       console.log(data);
       // Store the fetched data in state
