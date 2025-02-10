@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import IngredientPicker from "./IngredientPicker";
-
 describe("IngredientPicker", () => {
   // setup mock function of 'SetSelectedIngredient' - you prepend the fucntion you are testing with 'mock'
   const mockSetSelectedIngredient = jest.fn();
